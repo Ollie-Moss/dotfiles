@@ -1,0 +1,86 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "margin-top": 8,
+    "margin-left": 6,
+    "margin-right": 6, 
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-right": ["network", "cpu", "memory", "pulseaudio", "battery", "tray", "clock", "custom/power"],
+    "hyprland/workspaces": {
+         "sort-by-name": true,
+         "format": " {icon} ",
+         "format-icons": {
+             "default": "●",
+         },
+     },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "memory": {
+        "format": "<span font='17' rise='-2300'>󰍛</span> {}% "
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "<span font='17' rise='-2300'>{icon}</span> {signalStrength}%",
+        "format-ethernet": "󰌘",
+        "format-linked": "󰌙",
+        "format-disconnected": "Disconnected ",
+        "tooltip-format": "{essid} {signalStrength}%",
+        "format-icons" : ["󰤟", "󰤢", "󰤥", "󰤨"]
+    },
+    "clock": {
+        "timezone": "Pacific/Auckland",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "<span font='17' rise='-2300'>󰥔</span> {:%I:%M %d/%m/%Y}"
+    },
+    "cpu": {
+        "format": "<span font='17' rise='-2300'>󰻠</span> {usage}% "
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "<big>{icon}</big>",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "interval":30,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": [
+            "󰁻",
+            "󰁼",
+            "󰁾",
+            "󰂀",
+            "󰂂",
+            "󰁹"
+            ],
+    },
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "wlogout &",
+        "format": "󰐥"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "<span font='18' rise='-3200'>{icon}</span> {volume}%",
+        "format-bluetooth": " 󰝟  {format_source}",
+        "format-bluetooth-muted": "󰝟 ",
+        "format-muted": "<span font='18' rise='-3200'>󰝟</span> {volume}%",
+        "tooltip-format": "{volume}%\n{desc}",
+        "format-icons": ["", "", " "]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/lock": {
+        "tooltip": false,
+        "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
+        "format": "<big></big>"
+    },
+}

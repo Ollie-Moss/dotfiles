@@ -1,0 +1,118 @@
+@import "mocha.css";
+
+* {
+    font-family: Hack Nerd Font Regular;
+    font-size: 15px;
+    min-height: 0;
+}
+
+#waybar {
+    background: @base;
+    color: @text;
+    border-radius: 999px;
+}
+
+#workspaces {
+    border-radius: 999px;
+    margin: 10px;
+    background-color: @surface0;
+    margin-left: 1rem;
+}
+
+#workspaces button {
+    color: @surface2;
+    border-radius: 999px;
+    padding: 0.2rem 0.4rem;
+}
+
+#workspaces button.active {
+    color: @white;
+    border-radius: 1rem;
+}
+
+#workspaces button:hover {
+    color: @white;
+    border-radius: 1rem;
+}
+
+#custom-music,
+#memory,
+#cpu,
+#network,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#custom-lock,
+#custom-power {
+    background-color: @surface0;
+    padding: 0.2rem 0.75rem;
+    margin: 10px 0px;
+}
+
+#network {
+    border-radius: 20rem 0px 0px 20rem;
+    padding-left: 1rem;
+    color: @yellow;
+}
+
+#cpu {
+    color: @peach;
+}
+
+#memory {
+    color: @mauve;
+}
+
+#clock {
+    color: @blue;
+    border-radius: 0px 20rem 20rem 0px;
+    margin-right: 1rem;
+}
+
+#battery {
+    color: @green;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @red;
+}
+
+#backlight {
+    color: @yellow;
+}
+
+#backlight,
+#battery {
+    border-radius: 0;
+}
+
+#pulseaudio {
+    color: @maroon;
+}
+
+#custom-music {
+    color: @mauve;
+    border-radius: 1rem;
+}
+
+#custom-lock {
+    border-radius: 1rem 0px 0px 1rem;
+    color: @lavender;
+}
+
+#custom-power {
+    margin-right: 1rem;
+    border-radius: 1rem; 
+    color: @red;
+}
+
+#tray {
+    margin-right: 1rem;
+    border-radius: 1rem;
+}
