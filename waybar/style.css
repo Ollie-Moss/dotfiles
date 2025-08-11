@@ -1,0 +1,275 @@
+@import "mocha.css";
+
+/* -----------------------------------------------------
+*   Global
+* ----------------------------------------------------- */
+
+* {
+  /* `otf-font-awesome` is required for icons */
+    font-family: "JetBrainsMono Nerd Font", monospace;
+  font-weight: 800;
+  font-size: 15px;
+  font-feature-settings: '"zero", "ss01", "ss02", "cv01", "cv03", "cv04", "cv05", "cv06", "cv07", "cv08", "cv09"';
+  border: none;
+  border-radius: 0;
+  padding: 0 0;
+  margin: 0 0;
+  transition: background-color 0.2s ease-in-out, color 0.1s ease-in-out;
+}
+
+/* -----------------------------------------------------
+*   Waybar
+* ----------------------------------------------------- */
+window#waybar {
+  background: transparent;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+window#waybar.hidden {
+  opacity: 0;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+  box-shadow: 0px 0px 0px;
+}
+
+/* -----------------------------------------------------
+*   Tooltip
+* ----------------------------------------------------- */
+tooltip {
+  background: @surface;
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: @outline;
+}
+
+tooltip label {
+  color: @on_primary_container;
+}
+
+/* -----------------------------------------------------
+*   Workspaces
+* ----------------------------------------------------- */
+#workspaces {
+  background: @surface0;
+  color: @white;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 800;
+  font-size: 1.05em;
+}
+
+#workspaces button {
+  color: @mauve;
+  background: transparent;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: @overlay0;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+#workspaces button.focused {
+  color: @white;
+}
+
+#workspaces button.active {
+  background: @overlay1;
+  color: @mauve;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+#workspaces button.urgent {
+  background-color: @green;
+  border-radius: 10px;
+}
+
+/* ===== LAYOUT ADJUSTMENTS ===== */
+.modules-left{
+    padding-left: 20px;
+}
+.modules-right{
+    padding-right: 20px;
+}
+
+
+/* -----------------------------------------------------
+*   Window
+* ----------------------------------------------------- */
+#window {
+  background: @surface;
+  color: @on_primary_container;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 60px;
+  margin-right: 60px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: bold;
+}
+
+/* -----------------------------------------------------
+*   Clock
+* ----------------------------------------------------- */
+
+#clock,
+#pulseaudio,
+#network,
+#tray,
+#custom-power {
+    padding: 0.2rem 0.75rem;
+    margin: 5px 4px;
+    border-bottom: 2px solid;
+}
+
+#clock {
+  color: @blue;
+    border-color: @blue;
+}
+
+#clock.date {
+    color: @mauve;
+    border-color: @mauve;
+}
+
+/* -----------------------------------------------------
+*   Pulseaudio
+* ----------------------------------------------------- */
+#pulseaudio {
+  color: @yellow;
+  border-color: @yellow;
+}
+
+#pulseaudio.muted {
+  color: @red;
+}
+
+/* -----------------------------------------------------
+*   Network
+* ----------------------------------------------------- */
+#network {
+  color: @maroon;
+  border-color: @maroon;
+}
+
+#network.disconnected {
+  color: @red;
+  border-color: @yellow;
+}
+
+/* -----------------------------------------------------
+*   tray
+* ----------------------------------------------------- */
+#tray {
+  color: @white;
+  border-color: @white;
+}
+
+#tray>.passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @yellow;
+}
+
+/* -----------------------------------------------------
+*   Battery
+* ----------------------------------------------------- */
+#battery {
+  color: @green;
+  border-color: @green;
+}
+
+#battery.charging {
+  color: @cyan;
+  border: 2px solid @cyan;
+}
+
+#battery.warning {
+  color: @green;
+  border: 2px solid @green;
+}
+
+#battery.critical {
+  color: @yellow;
+  border: 2px solid @yellow;
+}
+
+/* -----------------------------------------------------
+*   temperature
+* ----------------------------------------------------- */
+#temperature {
+  background: @surface;
+  color: @cyan;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 800;
+}
+
+
+#temperature.critical {
+  color: @yellow;
+}
+
+/* -----------------------------------------------------
+*   Custom
+* ----------------------------------------------------- */
+
+#custom-power {
+    color: @red;
+    border-color: @red;
+}
+#custom-vpn {
+  background: @surface;
+  color: @secondary;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 800;
+  border: 2px solid @secondary;
+}
+
+#custom-hiddenwindow {
+  background: @surface;
+  color: @tertiary;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 800;
+}
+
+
+#cpu {
+  background: @surface;
+  color: @magenta;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 800;
+}

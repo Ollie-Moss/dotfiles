@@ -1,0 +1,17 @@
+# Ignore everything
+*
+
+# But not these directories
+!*/
+!.gitignore
+
+# Include specific folders (example: nvim and alacritty)
+!nvim/**
+!hypr/**
+!waybar/**
+!wlogout/**
+!wofi/**
+
+!.bashrc
+!.tmux.conf
+!.wezterm.lua
