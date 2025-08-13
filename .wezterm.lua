@@ -12,7 +12,7 @@ end
 
 -- For example, changing the color scheme:
 config.color_scheme = "Catppuccin Macchiato"
-config.font_size = 12
+-- config.font_size = 12
 
 config.window_background_opacity = 0.9
 
@@ -27,22 +27,23 @@ config.window_padding = {
 }
 
 config.max_fps = 240
+config.enable_wayland = false
+config.adjust_window_size_when_changing_font_size = false
 
 config.warn_about_missing_glyphs = false
--- config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
-config.enable_wayland = false
 config.keys = {
 	-- CTRL-SHIFT-l activates the debug overlay
-	{ key = "L", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
+	{ key = "L", mods = "CTRL", action = wezterm.action.ShowDebugOverlay }
 }
+
 config.skip_close_confirmation_for_processes_named = {
-  'sh',
-  'zsh',
-  'fish',
-  'nu',
-  'cmd.exe',
-  'pwsh.exe',
-  'powershell.exe',
+	"sh",
+	"zsh",
+	"fish",
+	"nu",
+	"cmd.exe",
+	"pwsh.exe",
+	"powershell.exe",
 }
 
 return config
