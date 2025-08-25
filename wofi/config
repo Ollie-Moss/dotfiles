@@ -3,9 +3,11 @@ width=750
 height=400
 always_parse_args=true
 show_all=false
-term=kitty
+term=wezterm
 hide_scroll=true
 print_command=true
 insensitive=true
 prompt=
 columns=2
+close_on_focus_loss=true
+

@@ -11,10 +11,14 @@ if wezterm.config_builder then
 end
 
 -- For example, changing the color scheme:
-config.color_scheme = "Catppuccin Macchiato"
+config.color_scheme = "Mono (terminal.sexy)"
+config.colors = {
+    foreground = "#ffffff",
+    background = "#121212"
+}
 -- config.font_size = 12
 
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.8
 
 -- tab bar
 config.enable_tab_bar = false

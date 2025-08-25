@@ -39,15 +39,16 @@ window#waybar.empty #window {
 *   Tooltip
 * ----------------------------------------------------- */
 tooltip {
-  background: @surface;
-  border-radius: 10px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: @outline;
+    background: rgb(23, 23, 23);
+    opacity: 1;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: @outline;
 }
 
 tooltip label {
-  color: @on_primary_container;
+  color: @white;
 }
 
 /* -----------------------------------------------------
@@ -64,7 +65,7 @@ tooltip label {
 }
 
 #workspaces button {
-  color: @mauve;
+  color: @white;
   background: transparent;
   padding: 5px 10px;
   border-radius: 10px;
@@ -84,7 +85,7 @@ tooltip label {
 
 #workspaces button.active {
   background: @overlay1;
-  color: @mauve;
+  color: @white;
   border-radius: 10px;
   padding: 0 10px;
 }
@@ -134,38 +135,38 @@ tooltip label {
 }
 
 #clock {
-  color: @blue;
-    border-color: @blue;
+  color: @white;
+    border-color: @white;
 }
 
 #clock.date {
-    color: @mauve;
-    border-color: @mauve;
+    color: @white;
+    border-color: @white;
 }
 
 /* -----------------------------------------------------
 *   Pulseaudio
 * ----------------------------------------------------- */
 #pulseaudio {
-  color: @yellow;
-  border-color: @yellow;
+  color: @white;
+  border-color: @white;
 }
 
 #pulseaudio.muted {
-  color: @red;
+  color: @white;
 }
 
 /* -----------------------------------------------------
 *   Network
 * ----------------------------------------------------- */
 #network {
-  color: @maroon;
-  border-color: @maroon;
+  color: @white;
+  border-color: @white;
 }
 
 #network.disconnected {
-  color: @red;
-  border-color: @yellow;
+  color: @white;
+  border-color: @white;
 }
 
 /* -----------------------------------------------------
@@ -182,30 +183,30 @@ tooltip label {
 
 #tray>.needs-attention {
   -gtk-icon-effect: highlight;
-  background-color: @yellow;
+  background-color: @white;
 }
 
 /* -----------------------------------------------------
 *   Battery
 * ----------------------------------------------------- */
 #battery {
-  color: @green;
-  border-color: @green;
+  color: @white;
+  border-color: @white;
 }
 
 #battery.charging {
-  color: @cyan;
-  border: 2px solid @cyan;
+  color: @white;
+  border: 2px solid @white;
 }
 
 #battery.warning {
-  color: @green;
-  border: 2px solid @green;
+  color: @white;
+  border: 2px solid @white;
 }
 
 #battery.critical {
-  color: @yellow;
-  border: 2px solid @yellow;
+  color: @white;
+  border: 2px solid @white;
 }
 
 /* -----------------------------------------------------
@@ -225,7 +226,7 @@ tooltip label {
 
 
 #temperature.critical {
-  color: @yellow;
+  color: @white;
 }
 
 /* -----------------------------------------------------
@@ -233,12 +234,12 @@ tooltip label {
 * ----------------------------------------------------- */
 
 #custom-power {
-    color: @red;
-    border-color: @red;
+    color: @white;
+    border-color: @white;
 }
 #custom-vpn {
-  background: @surface;
-  color: @secondary;
+  background: @white;
+  color: @white;
   border-radius: 10px;
   margin-top: 5px;
   margin-bottom: 5px;
