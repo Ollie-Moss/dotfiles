@@ -58,7 +58,9 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
 fi
 
 # add .local/bin to PATH
-export PATH=$PATH:$HOME/.local/bin
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
 
 # qt quick vars
 export QT_DIR=/usr/lib/qt5
@@ -68,6 +70,6 @@ export QML2_IMPORT_PATH=$QTDIR/qml
 export QT_QPA_PLATFORM_PLUGIN_PATH=$QTDIR/plugins
 
 # Netcore
-export PATH=$PATH:$HOME/.dotnet/tools
 export DOTNET_ROOT=$HOME/.dotnet
-export PATH=$PATH:$DOTNET_ROOT
+export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+. "$HOME/.cargo/env"
