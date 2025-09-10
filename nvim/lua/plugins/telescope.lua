@@ -55,8 +55,7 @@ return {
 						"node_modules",
 						"venv",
 						"build",
-						"target",
-						"third-party"
+						"target"
 					},
 
 					prompt_prefix = "  ",

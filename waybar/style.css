@@ -55,7 +55,7 @@ tooltip label {
 *   Workspaces
 * ----------------------------------------------------- */
 #workspaces {
-  background: @surface0;
+  background: #222222;
   color: @white;
   border-radius: 10px;
   margin-top: 5px;
@@ -84,8 +84,8 @@ tooltip label {
 }
 
 #workspaces button.active {
-  background: @overlay1;
-  color: @white;
+  background: @white;
+  color: @black;
   border-radius: 10px;
   padding: 0 10px;
 }

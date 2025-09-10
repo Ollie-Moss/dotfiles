@@ -222,12 +222,12 @@ return {
 					end,
 				},
 			})
-
 			require("lspconfig").rust_analyzer.setup({
 				settings = {
 					["rust-analyzer"] = {
-						checkOnSave = true,
 						cargo = {
+							features = "all",
+							allFeatures = true,
 							buildScripts = {
 								enable = true,
 							},
@@ -235,8 +235,15 @@ return {
 						procMacro = {
 							enable = true,
 						},
+						ignored = {
+							leptos_macro = {
+								"component",
+								"server",
+								"view",
+							},
+						},
 						diagnostics = {
-							disabled = { "macro-error" }, -- <-- suppress [macro-error]
+							disabled = { "macro-error" },
 						},
 					},
 				},
