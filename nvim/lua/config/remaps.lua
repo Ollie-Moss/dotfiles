@@ -72,7 +72,8 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 vim.keymap.set("i", "<C-u>", "", { desc = "Remove undo in insert mode" })
 
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "[P]re[v]iew" })
-vim.keymap.set("n", "<leader>pv", vim.cmd.CHADopen, { desc = "[P]re[v]iew" })
+-- vim.keymap.set("n", "<leader>pv", vim.cmd., { desc = "[P]re[v]iew" })
+vim.keymap.set("n", "<leader>pv", vim.cmd.Oil, { desc = "[P]re[v]iew" })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
@@ -81,3 +82,4 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
