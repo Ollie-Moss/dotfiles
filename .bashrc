@@ -79,4 +79,9 @@ export QT_QPA_PLATFORM_PLUGIN_PATH=$QTDIR/plugins
 # Netcore
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+
+# rust cargo
 . "$HOME/.cargo/env"
+
+# go
+export PATH=$PATH:/usr/local/go/bin
