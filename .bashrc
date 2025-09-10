@@ -79,4 +79,8 @@ export QT_QPA_PLATFORM_PLUGIN_PATH=$QTDIR/plugins
 # Netcore
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+
+export UNITY_PATH="/home/ollie/Unity/Hub/Editor/6000.1.15f1"  # Adjust to your Unity installation
+export MSBuildSDKsPath="$HOME/.dotnet/sdk/$(dotnet --version)/Sdks"
+
 . "$HOME/.cargo/env"
