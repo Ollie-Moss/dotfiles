@@ -42,7 +42,7 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "battery": {
-        "bat": "BAT0",
+        "bat": "BAT1",
         "interval": 20,
         "states": {
             "warning": 30,

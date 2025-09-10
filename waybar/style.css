@@ -127,6 +127,7 @@ tooltip label {
 #clock,
 #pulseaudio,
 #network,
+#battery,
 #tray,
 #custom-power {
     padding: 0.2rem 0.75rem;
