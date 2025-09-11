@@ -33,7 +33,7 @@
 </div>
 
 ```
-- hyprland >= v0.41.0
+- hyprland >= v0.49.0
 - waybar
 - wofi
 - wlogout
