@@ -57,4 +57,4 @@ mv dotfiles .config
 <div align=center>
   <h2>- License -</h2>
 </div>
-There is not set license for this repository.
+There is no license set for this repository.
