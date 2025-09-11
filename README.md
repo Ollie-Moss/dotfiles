@@ -38,7 +38,7 @@
 - wofi
 - wlogout
 - neovim 
-- hyprpaper*
+- hyprpaper
 - wezterm
 - tmux
 - wezterm
