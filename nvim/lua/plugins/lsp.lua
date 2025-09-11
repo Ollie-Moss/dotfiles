@@ -162,9 +162,9 @@ return {
 			--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 			local servers = {
 				clangd = {},
+
 				-- gopls = {},
 				-- pyright = {},
-				-- rust_analyzer = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 				--
 				-- Some languages (like typescript) have entire language plugins that can be useful:
@@ -220,6 +220,32 @@ return {
 						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 						require("lspconfig")[server_name].setup(server)
 					end,
+				},
+			})
+			require("lspconfig").rust_analyzer.setup({
+				settings = {
+					["rust-analyzer"] = {
+						cargo = {
+							features = "all",
+							allFeatures = true,
+							buildScripts = {
+								enable = true,
+							},
+						},
+						procMacro = {
+							enable = true,
+						},
+						ignored = {
+							leptos_macro = {
+								"component",
+								"server",
+								"view",
+							},
+						},
+						diagnostics = {
+							disabled = { "macro-error" },
+						},
+					},
 				},
 			})
 		end,

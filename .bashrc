@@ -19,6 +19,13 @@ blue='\[\e[38;5;117m\]'
 mauve='\[\e[38;5;176m\]'
 rosewater='\[\e[38;5;224m\]'
 reset='\[\e[0m\]'
+
+# Monochrome Colors
+white='\[\e[1m\]'            # White
+white_1='\[\e[38;5;250m\]' # Light gray
+light_gray='\[\e[38;5;250m\]' # Light gray
+gray='\[\e[38;5;245m\]'       # Medium gray
+
 # Git branch function
 parse_git_branch() {
   branch=$(git symbolic-ref --short HEAD 2>/dev/null)
@@ -28,7 +35,7 @@ parse_git_branch() {
 }
 
 # Prompt
-PS1="${lavender}\u@\h ${mauve}\w${pink}\$(parse_git_branch)${rosewater}\$ ${reset}"
+PS1="${white}\u@\h ${gray}\w${light_gray}\$(parse_git_branch)${white}\$ ${reset}"
 
 fuzzyFind() {
     local dir
@@ -72,4 +79,13 @@ export QT_QPA_PLATFORM_PLUGIN_PATH=$QTDIR/plugins
 # Netcore
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+
+# Unity
+export UNITY_PATH="/home/ollie/Unity/Hub/Editor/6000.1.15f1"  # Adjust to your Unity installation
+export MSBuildSDKsPath="$HOME/.dotnet/sdk/$(dotnet --version)/Sdks"
+
+# rust cargo
 . "$HOME/.cargo/env"
+
+# go
+export PATH=$PATH:/usr/local/go/bin

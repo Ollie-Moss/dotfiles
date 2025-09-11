@@ -11,10 +11,10 @@ if wezterm.config_builder then
 end
 
 -- For example, changing the color scheme:
-config.color_scheme = "Catppuccin Macchiato"
+config.color_scheme = "Afterglow"
 -- config.font_size = 12
 
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.8
 
 -- tab bar
 config.enable_tab_bar = false
@@ -33,7 +33,7 @@ config.adjust_window_size_when_changing_font_size = false
 config.warn_about_missing_glyphs = false
 config.keys = {
 	-- CTRL-SHIFT-l activates the debug overlay
-	{ key = "L", mods = "CTRL", action = wezterm.action.ShowDebugOverlay }
+	{ key = "L", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
 }
 
 config.skip_close_confirmation_for_processes_named = {
