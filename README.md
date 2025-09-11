@@ -29,6 +29,22 @@
 </div>
 
 <div align=center>
+  <h2>- Dependencies -</h2>
+</div>
+
+```
+- hyprland >= v0.41.0
+- waybar
+- wofi
+- wlogout
+- neovim 
+- hyprpaper*
+- wezterm
+- tmux
+- wezterm
+```
+
+<div align=center>
   <h2>- Installation -</h2>
 </div>
 
@@ -50,7 +66,7 @@ mv dotfiles .config
 - **wofi/** – Application launcher (Wofi) configuration  
 - **wlogout/** – Logout/lock screen styling  
 - **nvim/** – Neovim setup (Lua, plugins)  
-- **wallpapers/** – Wallpaper selector and Pywal integration  
+- **wallpapers/** – Wallpapers
 - **.bashrc**, **.tmux.conf**, **.wezterm.lua** – Shell, terminal multiplexer, and WezTerm customizations
 
 
