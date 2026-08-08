@@ -1,3 +1,3 @@
 #!/bin/bash
 sleep 5
-obs --startreplaybuffer --disable-shutdown-check
+obs --disable-shutdown-check
