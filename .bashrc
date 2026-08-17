@@ -9,6 +9,46 @@
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
 
+source /usr/share/bash-completion/completions/git
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
@@ -35,7 +75,8 @@ parse_git_branch() {
 }
 
 # Prompt
-PS1="${white}\u@\h ${gray}\w${light_gray}\$(parse_git_branch)${white}\$ ${reset}"
+#PS1="${white}\u@\h ${gray}\w${light_gray}\$(parse_git_branch)${white}\$ ${reset}"
+PS1="${white} ${gray}\w${light_gray}\$(parse_git_branch)${white}\n\$ ${reset}"
 
 fuzzyFind() {
     local dir
@@ -69,23 +110,24 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# qt quick vars
-export QT_DIR=/usr/lib/qt5
-export PATH=$QTDIR/bin:$PATH
-export QML_IMPORT_PATH=$QTDIR/qml
-export QML2_IMPORT_PATH=$QTDIR/qml
-export QT_QPA_PLATFORM_PLUGIN_PATH=$QTDIR/plugins
-
 # Netcore
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 
-# Unity
 export UNITY_PATH="/home/ollie/Unity/Hub/Editor/6000.1.15f1"  # Adjust to your Unity installation
 export MSBuildSDKsPath="$HOME/.dotnet/sdk/$(dotnet --version)/Sdks"
 
-# rust cargo
 . "$HOME/.cargo/env"
 
-# go
-export PATH=$PATH:/usr/local/go/bin
+export DISPLAY=:0.0
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PATH="/opt/Odin:$PATH"
+export PATH="/opt/ols/:$PATH"
+export PATH="/opt/lua-ls/bin:$PATH"
+
+export QML2_IMPORT_PATH="/usr/share/doc/quickshell"
+

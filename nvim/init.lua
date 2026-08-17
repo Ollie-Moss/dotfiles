@@ -3,4 +3,6 @@ require("remaps")
 require("lazy_setup")
 require("colours")
 
-vim.lsp.enable({ "ols", "lua_ls" })
+vim.lsp.config('qmlls', {cmd = {'qmlls6'}})
+
+vim.lsp.enable({ "ols", "lua_ls", "roslyn_ls", "qmlls" })

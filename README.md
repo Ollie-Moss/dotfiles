@@ -6,11 +6,7 @@
 <div align=center>
   
 ![Hyprland](https://img.shields.io/badge/Hyprland-0.40+-blue?style=for-the-badge&logo=wayland&logoColor=white)
-![Waybar](https://img.shields.io/badge/Waybar-custom-green?style=for-the-badge)
-![Wofi](https://img.shields.io/badge/Wofi-styled-orange?style=for-the-badge)
-![WezTerm](https://img.shields.io/badge/WezTerm-themed-9370DB?style=for-the-badge)
 ![Neovim](https://img.shields.io/badge/Neovim-Lua%20Config-57A143?style=for-the-badge&logo=neovim&logoColor=white)
-![wlogout](https://img.shields.io/badge/wlogout-CSS%20custom-pink?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
 ![Status](https://img.shields.io/badge/status-maintained-success?style=for-the-badge)
 
@@ -19,7 +15,7 @@
 <div align=center>
   <h2>- Overview -</h2>
 </div>
-<p>A curated Hyprland configuration featuring Hyprland, Waybar, Wofi, wlogout, Neovim, WezTerm, and custom wallpaper scripts.</p>
+<p>A curated Hyprland configuration featuring Hyprland, Neovim, Ghostty, and custom wallpaper scripts.</p>
 
 
 <div align=center>
@@ -33,15 +29,11 @@
 </div>
 
 ```
-- hyprland >= v0.49.0
-- waybar
-- wofi
-- wlogout
-- neovim 
+- hyprland >= v0.55.0
+- neovim >= v0.13
 - hyprpaper
-- wezterm
 - tmux
-- wezterm
+- ghostty
 ```
 
 <div align=center>
@@ -62,12 +54,10 @@ mv dotfiles .config
 </div>
 
 - **hypr/** – Your Hyprland configuration files  
-- **waybar/** – Waybar status bar setup  
-- **wofi/** – Application launcher (Wofi) configuration  
-- **wlogout/** – Logout/lock screen styling  
 - **nvim/** – Neovim setup (Lua, plugins)  
 - **wallpapers/** – Wallpapers
-- **.bashrc**, **.tmux.conf**, **.wezterm.lua** – Shell, terminal multiplexer, and WezTerm customizations
+- **ghostty/** - Ghostty config
+- **.bashrc**, **.tmux.conf**, – Shell, and terminal multiplexer
 
 
 <div align=center>
