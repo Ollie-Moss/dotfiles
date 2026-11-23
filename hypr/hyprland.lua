@@ -15,11 +15,17 @@ hl.monitor({
     position = "auto",
     scale = "1",
 })
+-- hl.monitor({
+--     output = "DP-2",
+--     mode = "1920x1080@260",
+--     position = "auto",
+--     scale = "1",
+-- })
 
 -- AUTOSTART
 hl.on("hyprland.start", function()
-    hl.exec_cmd("swaync")
     hl.exec_cmd("hyprpaper")
+    hl.exec_cmd("qs -c control-center")
 
     hl.exec_cmd('[workspace 1 silent] ' .. terminal)
     hl.exec_cmd('[workspace 2 silent] ' .. browser)
@@ -42,7 +48,7 @@ hl.env("GDK_SCALE", "1")
 hl.config({
     general = {
         gaps_in = 5,
-        gaps_out = 20,
+        gaps_out = 12,
         border_size = 2,
 
         col = {
@@ -137,7 +143,7 @@ hl.bind(" + PRINT", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 
 -- Replay buffer script bind
 hl.bind("CTRL + ALT + S",
-    hl.dsp.exec_cmd("/home/ollie/.nvm/versions/node/v22.19.0/bin/node /home/ollie/replay-buffer/save_replaybuffer.js"))
+    hl.dsp.exec_cmd("/usr/bin/node /home/ollie/replay-buffer/save_replaybuffer.js"))
 
 -- Focus move
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
@@ -193,29 +199,76 @@ hl.window_rule({
 hl.window_rule({
     name = "float-simplex",
     match = { title = "^(Simplex)$" },
+    no_initial_focus = true,
     float = true,
 })
 
 hl.window_rule({
     name = "steam-to-workspace3",
     match = { class = "^(steam)$" },
-    workspace = "3",
+    workspace = "3 silent",
+    no_initial_focus = true,
 })
 
 hl.window_rule({
     name = "minecraft-launcher-to-workspace3",
     match = { title = "^(minecraft-launcher)$" },
-    workspace = "3",
+    workspace = "3 silent",
+    no_initial_focus = true,
 })
 
 hl.window_rule({
     name = "java-to-workspace3",
     match = { class = "^(java)$" },
-    workspace = "3",
+    workspace = "3 silent",
+    no_initial_focus = true,
 })
 
 hl.window_rule({
     name = "discord-to-special-magic",
     match = { class = "^(discord)$" },
-    workspace = "special:magic",
+    workspace = "special:magic silent",
+    no_initial_focus = true,
 })
+
+hl.layer_rule({
+    name = "no animations",
+    match = { namespace = "^quickshell:panel$" },
+    no_anim = true, 
+})
+
+hl.window_rule({
+    name  = "geometry-dash-fullscreen",
+    match = { class = "^steam_app_322170$" },  -- Geometry Dash's Steam app ID
+    fullscreen = true,
+    immediate  = true,   -- allow tearing for lower input latency (optional)
+})
+
+local MODE_STRETCH = "modeline 808.00 1920 1968 2000 2080 1440 1443 1447 1619 +hsync -vsync"
+local MODE_NATIVE  = "2560x1440@240"
+
+hl.monitor({
+    output = "DP-2",
+    mode     = "2560x1440",
+    position = "auto",
+    scale = "1",
+})
+
+hl.bind(mainMod .. " + F10", function()
+
+    hl.monitor({
+        output = "DP-2",
+        mode     = "1920x1440",
+        position = "auto",
+        scale = "1",
+    })
+end)
+
+hl.bind(mainMod .. " + F11", function()
+    hl.monitor({
+        output = "DP-2",
+        mode     = "2560x1440",
+        position = "auto",
+        scale = "1",
+    })
+end)

@@ -128,6 +128,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/opt/Odin:$PATH"
 export PATH="/opt/ols/:$PATH"
 export PATH="/opt/lua-ls/bin:$PATH"
+export PATH="/opt/qmlls/bin:$PATH"
 
 export QML2_IMPORT_PATH="/usr/share/doc/quickshell"
 
+export PATH="$HOME/.scripts:$PATH"

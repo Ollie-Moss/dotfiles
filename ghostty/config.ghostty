@@ -1,0 +1,22 @@
+# Theme
+theme = Afterglow
+
+# Font
+font-family = AdwaitaMono Nerd Font
+
+background-opacity = 0.8
+
+window-show-tab-bar = never
+
+window-padding-x = 2
+window-padding-y = 2
+
+# confirm-close-surface = false
+
+clipboard-paste-protection = false
+
+clipboard-read = allow
+
+clipboard-write = allow
+
+desktop-notifications = false

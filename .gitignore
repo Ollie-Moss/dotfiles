@@ -8,12 +8,10 @@
 # Include specific folders (example: nvim and alacritty)
 !nvim/**
 !hypr/**
-!waybar/**
-!wlogout/**
 !wallpapers/**
-!wofi/**
+!ghostty/**
+!quickshell/**
 
 !.bashrc
 !.tmux.conf
-!.wezterm.lua
 !preview.png
